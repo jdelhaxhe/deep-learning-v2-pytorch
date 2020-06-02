@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 __pycache__
+convolutional-neural-networks/mnist-mlp/data/MNIST/
+intro-to-pytorch/Cat_Dog_data/

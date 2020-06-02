@@ -110,9 +110,9 @@ class NeuralNetwork(object):
         hidden_error_term = hidden_error * self.activation_function_prime(hidden_outputs)
         
         # Weight step (input to hidden)
-        delta_weights_i_h += self.lr * X[:,None] * hidden_error_term
+        delta_weights_i_h += X[:,None] * hidden_error_term
         # Weight step (hidden to output)        
-        delta_weights_h_o += self.lr * hidden_outputs[:,None] * output_error_term
+        delta_weights_h_o += hidden_outputs[:,None] * output_error_term
 
         return delta_weights_i_h, delta_weights_h_o
 
@@ -126,8 +126,8 @@ class NeuralNetwork(object):
             n_records: number of records
 
         '''
-        self.weights_hidden_to_output += delta_weights_h_o/n_records # update hidden-to-output weights with gradient descent step
-        self.weights_input_to_hidden += delta_weights_i_h/n_records # update input-to-hidden weights with gradient descent step
+        self.weights_hidden_to_output += self.lr * delta_weights_h_o/n_records # update hidden-to-output weights with gradient descent step
+        self.weights_input_to_hidden += self.lr * delta_weights_i_h/n_records # update input-to-hidden weights with gradient descent step
 
     def run(self, features):
         ''' Run a forward pass through the network with input features 
