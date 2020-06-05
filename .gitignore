@@ -2,3 +2,8 @@
 __pycache__
 convolutional-neural-networks/mnist-mlp/data/MNIST/
 intro-to-pytorch/Cat_Dog_data/
+autoencoder/denoising-autoencoder/data/
+autoencoder/linear-autoencoder/data/
+convolutional-neural-networks/cifar-cnn/data/
+project-dog-classification/data/
+weight-initialization/data/
